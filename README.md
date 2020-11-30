@@ -1,2 +1,2 @@
-# Estudos de Programacao
- atividades de  programação
+# Estudos de Programação.
+ Atividades para  aprendizado de  programação.
