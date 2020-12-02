@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Super Mário World</title>
+</head>
+
+<body onload="InicioJogo()">
+
+    <link rel="stylesheet" href="../Praticas/Praticas_quiz.css">
+ 
+
+    <div class="container">
+        <div id="game" class="justify-content-center flex-column align-items-center">
+            <div>
+                <img id="question-image" class="image">
+            </div>
+            <div id="question" class="question">
+            </div>
+            <div id="question-container">
+                <div class="question-container-option">
+                    <p class="questionOption">A - </p>
+                    <p id="questionA" class="question-answer" onclick="Ver_a_Resposta(this.id)"></p>
+                </div>
+                <div class="question-container-option">
+                    <p class="questionOption">B - </p>
+                    <p id="questionB" class="question-answer" onclick="Ver_a_Resposta(this.id)"></p>
+                </div>
+                <div class="question-container-option">
+                    <p class="questionOption">C - </p>
+                    <p id="questionC" class="question-answer" onclick="Ver_a_Resposta(this.id)"></p>
+                </div>
+                <div class="question-container-option">
+                    <p class="questionOption">D - </p>
+                    <p id="questionD" class="question-answer" onclick="Ver_a_Resposta(this.id)"></p>
+                </div>
+
+            </div>
+        </div>
+        <div id="count" class="question-count"></div>
+
+    </div>
+    </div>
+
+    <script type="text/javascript">
+
+        let questionCount = 0;
+        let score = 0;
+        const question = document.getElementById("question");
+        const questionA = document.getElementById("questionA");
+        const questionB = document.getElementById("questionB");
+        const questionC = document.getElementById("questionC");
+        const questionD = document.getElementById("questionD");
+        const img = document.getElementById("question-image");
+        const questions = document.getElementById("question-container");
+        const count = document.getElementById("count");
+        function InicioJogo () {
+
+            nQuestao();
+
+        }
+
+        limpafundo = () => {
+            questionA.style.backgroundColor = "";
+            questionB.style.backgroundColor = "";
+            questionC.style.backgroundColor = "";
+            questionD.style.backgroundColor = "";
+        }
+
+        limpadados = () => {
+            questionA.innerHTML = "";
+            questionB.innerHTML = "";
+            questionC.innerHTML = "";
+            questionD.innerHTML = "";
+            questions.style.display = "none";
+            count.innerHTML = "Fim do Quiz!";
+        }
+
+        nQuestao = () => {
+            questionCount++;
+            count.innerHTML = 'Questão ' + questionCount + '/10';
+
+            switch (questionCount) {
+                case 1:
+                    img.src = "../figuras/01.jpg"
+                    setTimeout(function () { (question.innerHTML = '1)  Qual foi o jogo de  maior sucesso  da Nintendo</i>?'); }, 100);
+                    setTimeout(function () { (questionA.innerHTML = 'Bomberman '); }, 2500);
+                    setTimeout(function () { (questionB.innerHTML = ' Tetris'); }, 2600);
+                    setTimeout(function () { (questionC.innerHTML = ' Super Mário3'); }, 2700);
+                    setTimeout(function () { (questionD.innerHTML = 'Super Mário World '); }, 2800);
+                    break;
+
+                case 2:
+                    img.src = "../figuras/02.jpg"
+                    question.innerHTML = '2)    Qual foi o primeiro sucesso da Nintendo?'
+                    questionA.innerHTML = ' Doney Kong '
+                    questionB.innerHTML = ' Zelda.'
+                    questionC.innerHTML = 'Mario Wario'
+                    questionD.innerHTML = ' Star Fox'
+                    break;
+
+                case 3:
+                    img.src = "../figuras/03.jpg"
+                    question.innerHTML = '3)    Qual é a profissão do personagem Mário?'
+                    questionA.innerHTML = ' Bombeiro'
+                    questionB.innerHTML = ' Carpinteiro'
+                    questionC.innerHTML = 'Encanador'
+                    questionD.innerHTML = ' Mecânico'
+                    break;
+
+                case 4:
+                    img.src = "../figuras/04.jpg"
+                    question.innerHTML = '4)    Qual é nome do irmão do personagem Mário?'
+                    questionA.innerHTML = ' Leonidas'
+                    questionB.innerHTML = ' Luidi'
+                    questionC.innerHTML = ' Nicolau'
+                    questionD.innerHTML = ' Luigi '
+                    break;
+
+                case 5:
+                    img.src = "../figuras/05.jpg"
+                    question.innerHTML = '5)    Quem é o inimigo do Mário?'
+                    questionA.innerHTML = 'Yoshi'
+                    questionB.innerHTML = ' Bowser'
+                    questionC.innerHTML = 'Toach'
+                    questionD.innerHTML = ' Peach '
+                    break;
+
+                case 6:
+                    img.src = "../figuras/06.jpg"
+                    question.innerHTML = '6)    O que Nintendo quer dizer?'
+                    questionA.innerHTML = ' Deixar a sorte nas mãos do destino.'
+                    questionB.innerHTML = ' Sorte.'
+                    questionC.innerHTML = ' Não entendo nada.'
+                    questionD.innerHTML = ' Jogo. '
+                    break;
+
+                case 7:
+                    img.src = "../figuras/07.jpg"
+                    question.innerHTML = '7)    Qual é o nome da montaria do Mário?'
+                    questionA.innerHTML = ' Peach'
+                    questionB.innerHTML = ' Toach'
+                    questionC.innerHTML = ' Bowser'
+                    questionD.innerHTML = ' Yoshi '
+                    break;
+
+                case 8:
+                    img.src = "../figuras/08.jpg"
+                    question.innerHTML = '8)    Quem o Mário sempre salva no jogo?'
+                    questionA.innerHTML = ' Luigi'
+                    questionB.innerHTML = ' Yoshi '
+                    questionC.innerHTML = ' Peach '
+                    questionD.innerHTML = ' Toach '
+                    break;
+
+                case 9:
+                    img.src = "../figuras/09.jpg"
+                    question.innerHTML = '9)    Quem é o Bowser”?'
+                    questionA.innerHTML = ' Tartaruga'
+                    questionB.innerHTML = '  Tartaruga Dragão '
+                    questionC.innerHTML = ' Dragão '
+                    questionD.innerHTML = ' Dinossauro '
+                    break;
+
+                case 10:
+                    img.src = "../figuras/10.jpg"
+                    question.innerHTML = '10)   Onde o personagem Mário nasceu?'
+                    questionA.innerHTML = ' Kindon Peach'
+                    questionB.innerHTML = '  Brooklyn '
+                    questionC.innerHTML = ' Chigaco '
+                    questionD.innerHTML = ' Kindon Mushroom '
+                    break;
+
+                case 11 :
+                    FinalJogo(score)
+                    
+                    break;
+
+            }
+
+        }
+
+        FinalJogo = (score) => {
+            if (score <= 30)
+            {
+                img.src = "../figuras/perdeu.jpg"
+                question.innerHTML = 'Sua pontuação:' + score + '/100' + '<br>' +
+                'Sinto muito! Você não é um grande fã do Mario World, tente novamente!'
+                 limpadados  ()
+                 limpafundo()
+        
+
+            } else if (score > 30 && score <= 50) {
+                img.src = "../figuras/bowser1.jpg"
+                question.innerHTML = 'Sua pontuação:' + score + '/100' +  '<br>' +
+                'Hum!! Parece que você não entende muito  sobre esse Jogo, mas pode melhorar!'
+                 limpadados  ()
+                limpafundo ()
+            } else {
+                img.src = "../figuras/ganhou2.jpg"
+                question.innerHTML = 'Sua pontuação:' + score + '/100' + '<br>' +
+                'Que máximo!Você é um GRANDE fã de Mario World! Parabéns'
+                 limpadados  ()
+                limpafundo ()
+            }
+        }
+
+        Ver_a_Resposta = (id) => {
+            console.log(id);
+            console.log(questionCount);
+
+            var optionClicked = document.getElementById(id);
+
+            switch (questionCount) {
+                case 1:
+                    if (id == "questionD") {
+
+                        questionD.style.backgroundColor = "#006400"
+                        score = score + 10;
+                    } else {
+                        questionD.style.backgroundColor = "#006400"
+                        optionClicked.style.backgroundColor = "#8B0000";
+                    }
+                    break;
+                case 2:
+                    if (id == "questionA") {
+
+                        questionA.style.backgroundColor = "#006400";
+                        score = score + 10;
+                    } else {
+                        questionA.style.backgroundColor = "#006400"
+                        optionClicked.style.backgroundColor = "#8B0000";
+                    }
+                    break;
+                case 3:
+                    if (id == "questionC") {
+                        questionC.style.backgroundColor = "#006400";
+                        score = score + 10;
+                    } else {
+                        questionC.style.backgroundColor = "#006400"
+                        optionClicked.style.backgroundColor = "#8B0000";
+                    }
+                    break;
+                case 4:
+                    if (id == "questionD") {
+                        questionD.style.backgroundColor = "#006400";
+                        score = score + 10;
+                    } else {
+                        questionD.style.backgroundColor = "#006400";
+                        optionClicked.style.backgroundColor = "#8B0000";
+                    }
+                    break;
+                case 5:
+                    if (id == "questionB") {
+                        questionB.style.backgroundColor = "#006400";
+                        score = score + 10;
+                    } else {
+                        questionB.style.backgroundColor = "#006400";
+                        optionClicked.style.backgroundColor = "#8B0000";
+                    }
+                    break;
+                case 6:
+                    if (id == "questionA") {
+                        questionA.style.backgroundColor = "#006400";
+                        score = score + 10;
+                    } else {
+                        questionA.style.backgroundColor = "#006400";
+                        optionClicked.style.backgroundColor = "#8B0000";
+                    }
+                    break;
+                case 7:
+                    if (id == "questionD") {
+                        questionD.style.backgroundColor = "#006400";
+                        score = score + 10;
+                    } else {
+                        questionD.style.backgroundColor ="#006400";
+                        optionClicked.style.backgroundColor = "#8B0000";
+                    }
+                    break;
+                case 8:
+                    if (id == "questionC") {
+                        questionC.style.backgroundColor = "#006400";
+                        score = score + 10;
+                    } else {
+                        questionC.style.backgroundColor = "#006400";
+                        optionClicked.style.backgroundColor = "#8B0000";
+                    }
+                    break;
+                case 9:
+                    if (id == "questionB") {
+                        questionB.style.backgroundColor = "#006400";
+                        score = score + 10;
+                    } else {
+                        questionB.style.backgroundColor ="#006400";
+                        optionClicked.style.backgroundColor = "#8B0000";
+                    }
+                    break;
+                case 10:
+                    if (id == "questionB") {
+                        questionB.style.backgroundColor = "#006400";;
+                        score = score + 10;
+                    } else {
+                        questionB.style.backgroundColor = "#006400";;
+                        optionClicked.style.backgroundColor = "#8B0000";
+                    }
+                    break;
+               
+
+            }
+
+            setTimeout(function () {
+                console.log(score);
+                limpafundo ();
+                nQuestao();
+            }, 2700);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+
+
+
